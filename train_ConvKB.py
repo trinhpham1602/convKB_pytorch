@@ -110,15 +110,15 @@ if args.mode == "train":
         #     "./benchmarks/" + args.dataset + "/relation2vec"+hidden_size+".init",
         #     "./benchmarks/" + args.dataset + "/entity2vec"+hidden_size+".init")
         init_entity_embs = np.load(
-            "./benchmarks/" + args.dataset + "/relation2vec"+hidden_size+".npy")
-        init_relation_embs = np.load(
             "./benchmarks/" + args.dataset + "/entity2vec"+hidden_size+".npy")
+        init_relation_embs = np.load(
+            "./benchmarks/" + args.dataset + "/relation2vec"+hidden_size+".npy")
         e2id, id2e = get_term_id(
             filename="./benchmarks/" + args.dataset + "/entity2id.txt")
         e2id50, id2e50 = get_term_id(
             filename="./benchmarks/" + args.dataset + "/entity2id_"+hidden_size+"init.txt")
         assert len(e2id) == len(e2id50)
-
+        # print(init_entity_embs[0])
         entity_embs = np.empty([len(e2id), con.hidden_size]).astype(np.float32)
         for i in range(len(e2id)):
             _word = id2e[i]
