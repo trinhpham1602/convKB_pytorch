@@ -154,5 +154,5 @@ else:
 
     con.set_config_CNN(num_of_filters=args.num_of_filters,
                        drop_prob=args.dropout, kernel_size=args.kernel_size)
-    con.set_test_model(ConvKB, args.checkpoint_path)
+    con.set_test_medictodel(ConvKB, args.checkpoint_path)
     con.test()
