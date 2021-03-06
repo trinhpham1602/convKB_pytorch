@@ -103,8 +103,8 @@ if args.mode == "train":
         hidden_size = "100"  # for FB15K-237
         con.set_dimension(100)
         if args.dataset == "WN18RR":
-            hidden_size = "100"
-            con.set_dimension(100)
+            hidden_size = "50"
+            con.set_dimension(50)
 
         # init_entity_embs, init_relation_embs = get_init_embeddings(
         #     "./benchmarks/" + args.dataset + "/relation2vec"+hidden_size+".init",
@@ -149,8 +149,8 @@ else:
         hidden_size = "100"  # for FB15K-237
         con.set_dimension(100)
         if args.dataset == "WN18RR":
-            hidden_size = "100"
-            con.set_dimension(100)
+            hidden_size = "50"
+            con.set_dimension(50)
 
     con.set_config_CNN(num_of_filters=args.num_of_filters,
                        drop_prob=args.dropout, kernel_size=args.kernel_size)
